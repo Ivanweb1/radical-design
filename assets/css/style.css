@@ -123,11 +123,7 @@ img {
   font-size: 16px;
 }
 
-.header__link--active {
-  color: var(--color-accent);
-}
-
-.header__link--active .dot {
+.header__link:hover .dot {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
