@@ -103,6 +103,128 @@ img {
   }
 }
 
+/* Home hero */
+
+.home-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #818181; /* placeholder — replace with hero video/photo */
+  color: #fff;
+  overflow: hidden;
+}
+
+.home-hero__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  z-index: 100;
+}
+
+.home-hero__mark {
+  display: block;
+  line-height: 0;
+}
+
+.home-hero__mark img {
+  display: block;
+  width: 30px;
+  height: auto;
+}
+
+.home-hero__nav {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-hero__nav a {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.home-hero__nav a:hover {
+  opacity: 1;
+}
+
+.home-hero__projects {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  transition: opacity 0.2s ease;
+}
+
+.home-hero__projects:hover {
+  opacity: 0.8;
+}
+
+.home-hero__bottom {
+  margin-top: auto;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.home-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-hero__title {
+  margin: 0;
+  font-family: "Aeonik Pro", "Inter Tight", -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 1.2;
+}
+
+.home-hero__tagline {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 1.2;
+}
+
+.home-hero__contact {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  transition: opacity 0.2s ease;
+}
+
+.home-hero__contact:hover {
+  opacity: 0.8;
+}
+
+.home-hero .header__burger span {
+  background: #fff;
+}
+
+.home-hero .header__burger.is-open span {
+  background: var(--color-text);
+}
+
 /* Header */
 
 .header {
@@ -1380,6 +1502,13 @@ img {
 
   .header__burger {
     display: flex;
+  }
+
+  /* Home hero */
+  .home-hero__nav,
+  .home-hero__projects,
+  .home-hero__contact {
+    display: none;
   }
 
   /* CTA stacks */
