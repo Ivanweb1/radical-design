@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="triangle" clip-path="url(#clip0_0_62)">
+<path id="Vector" d="M-2.62268e-06 -2.62268e-06L-2.62268e-06 60L59.9903 60L-2.62268e-06 -2.62268e-06ZM59.9903 60L120 -2.62268e-06L59.9903 -2.62268e-06L59.9903 60ZM59.9903 60L120 120L120 60L59.9903 60ZM59.9903 60L-2.62268e-06 120L59.9903 120L59.9903 60Z" fill="var(--fill-0, #0D0DC0)"/>
+</g>
+<defs>
+<clipPath id="clip0_0_62">
+<rect width="120" height="120" fill="white"/>
+</clipPath>
+</defs>
+</svg>
