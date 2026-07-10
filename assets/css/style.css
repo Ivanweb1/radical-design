@@ -1415,7 +1415,6 @@ img {
 .portfolio__item {
   display: block;
   aspect-ratio: 1 / 1;
-  border-radius: 20px;
   background: var(--color-muted-bg);
   transition: opacity 0.2s ease;
 }
