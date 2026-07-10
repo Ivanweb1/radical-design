@@ -160,6 +160,7 @@ img {
 }
 
 .home-hero__projects {
+  position: relative;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 16px;
@@ -169,6 +170,11 @@ img {
 
 .home-hero__projects:hover {
   opacity: 0.8;
+}
+
+.home-hero__projects:hover .dot {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 .home-hero__bottom {
@@ -239,9 +245,30 @@ img {
 }
 
 .header__link {
+  position: relative;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 16px;
+}
+
+.header__link:hover .dot {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Shared active-state dot (header link, filters) */
+
+.dot {
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.5);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .header__nav {
@@ -1466,6 +1493,130 @@ img {
   text-transform: uppercase;
 }
 
+/* Portfolio */
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 60px;
+}
+
+.portfolio__filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px 24px;
+}
+
+.filter {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--color-text);
+  opacity: 0.6;
+  white-space: nowrap;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.filter:hover {
+  color: var(--color-accent);
+}
+
+.filter--active {
+  opacity: 1;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.portfolio__item {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  background: var(--color-muted-bg);
+  overflow: hidden;
+}
+
+.portfolio__item-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  background: var(--color-bg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.portfolio__item:hover .portfolio__item-overlay,
+.portfolio__item:focus-visible .portfolio__item-overlay {
+  opacity: 1;
+}
+
+.portfolio__item-title {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+.portfolio__item-desc {
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--color-text);
+  opacity: 0.5;
+  text-wrap: balance;
+}
+
+/* Scroll to top */
+
+.scroll-top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.scroll-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  opacity: 0.9;
+}
+
 /* Responsive */
 
 @media (max-width: 900px) {
@@ -1547,6 +1698,19 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Portfolio */
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .scroll-top {
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
   /* Footer stacks */
   .footer__inner {
     flex-direction: column;
@@ -1615,6 +1779,15 @@ img {
 
   .project__squiggle {
     display: none;
+  }
+
+  /* Portfolio */
+  .portfolio__filters {
+    gap: 12px 20px;
+  }
+
+  .filter {
+    font-size: 14px;
   }
 }
 
@@ -1728,5 +1901,15 @@ img {
   .project__video-play svg {
     width: 14px;
     height: auto;
+  }
+
+  /* Portfolio */
+  .portfolio {
+    padding-top: 32px;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

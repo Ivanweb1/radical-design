@@ -247,3 +247,30 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+// Portfolio filters
+(function () {
+  var filters = document.querySelectorAll('[data-filter]');
+  if (!filters.length) return;
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (b) { b.classList.remove('filter--active'); });
+      btn.classList.add('filter--active');
+    });
+  });
+})();
+
+// Scroll to top
+(function () {
+  var btn = document.querySelector('[data-scroll-top]');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function () {
+    btn.classList.toggle('scroll-top--visible', window.scrollY > 600);
+  });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
