@@ -1712,13 +1712,17 @@ img {
 
 .faq__a-inner p {
   margin: 0;
-  padding: 0 0 28px;
+  padding: 0 0 16px;
   max-width: 1000px;
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.3;
   text-align: justify;
   opacity: 0.6;
+}
+
+.faq__a-inner p:last-child {
+  padding-bottom: 28px;
 }
 
 /* Responsive */
@@ -1920,7 +1924,7 @@ img {
     height: 20px;
   }
 
-  .faq__a-inner p {
+  .faq__a-inner p:last-child {
     padding-bottom: 20px;
   }
 
