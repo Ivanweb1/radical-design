@@ -141,49 +141,53 @@
   var COLLAPSED_COUNT = 8;
 
   var awards = [
-    { year: '2025', name: 'ADD AWARDS' },
-    { year: '2025', name: 'ADD AWARDS' },
-    { year: '2025', name: 'BEST OFICE AWARDS' },
-    { year: '2024', name: 'ADD AWARDS' },
-    { year: '2024', name: 'BEST OFICE AWARDS' },
-    { year: '2024', name: 'BEST OFICE AWARDS' },
-    { year: '2024', name: 'BEST OFICE AWARDS' },
-    { year: '2023', name: 'BEST OFICE AWARDS' },
-    { year: '2022', name: 'BEST OFICE AWARDS' },
-    { year: '2022', name: 'BEST OFICE AWARDS' },
-    { year: '2022', name: 'BEST OFICE AWARDS' },
-    { year: '2021', name: 'BEST OFICE AWARDS' },
-    { year: '2021', name: 'ADD AWARDS' },
-    { year: '2021', name: 'ADD AWARDS' },
-    { year: '2021', name: '«Офис.СПб»' },
-    { year: '2021', name: 'Соединяя Мосты, Сочи' },
-    { year: '2021', name: 'Denkmal Award' },
-    { year: '2020', name: 'Ресурс Периферии' },
-    { year: '2019', name: '«Офис.СПб»' },
-    { year: '2019', name: 'Новое пространство Росатома' },
-    { year: '2018', name: 'ADD AWARDS' },
-    { year: '2018', name: 'Tile Story' },
-    { year: '2017', name: '«Офис.СПб»' },
-    { year: '2016', name: 'Архитектурный образ России' },
-    { year: '2013', name: 'Flex Office' },
-    { year: '2012', name: 'Зеленый проект' },
-    { year: '2026', name: 'Hotel Business Days by Ruviera' },
-    { year: '2025', name: 'Клуб строителей, форум' },
-    { year: '2025', name: 'Hotel Business Days by Ruviera' },
-    { year: '2025', name: '«Коммерсантъ», HoReCa' },
-    { year: '2025', name: '«Архитектура и гостеприимство»' },
-    { year: '2025', name: 'Бизнес и Дизайн Диалог Спб Best office' },
-    { year: '2025', name: 'Состав жюри «Золотой Трезини»' },
-    { year: '2022', name: 'Best office' },
-    { year: '2022', name: 'Вебинары «Архитектурная керамика. Экстерьер & интерьер»' },
-    { year: '2022', name: 'Обучающий «Офис.СПб»' }
+    { year: '2025', name: 'ADD AWARDS', url: 'https://addawards.ru/winners/2025/402885/' },
+    { year: '2025', name: 'ADD AWARDS', url: 'https://addawards.ru/winners/2025/402927/' },
+    { year: '2025', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-113950-aurix/' },
+    { year: '2024', name: 'ADD AWARDS', url: 'https://addawards.ru/winners/2024/345735/' },
+    { year: '2024', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-96725-nevskaya-bazilika/' },
+    { year: '2024', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-96721-bell-integrator/' },
+    { year: '2024', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-96727-u-apart/' },
+    { year: '2023', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-63142-qubity/' },
+    { year: '2022', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-59911-profmaster/' },
+    { year: '2022', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-60493-ortgraph/' },
+    { year: '2022', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-60042-vlp/' },
+    { year: '2021', name: 'BEST OFICE AWARDS', url: 'https://www.officenext.ru/projects/project-51356-fk-ramps/' },
+    { year: '2021', name: 'ADD AWARDS', url: 'https://addawards.ru/winners/2022/217558/' },
+    { year: '2021', name: 'ADD AWARDS', url: 'https://addawards.ru/winners/2022/217573/' },
+    { year: '2021', name: '«Офис.СПб»', url: 'http://projectbaltia.com/competitions-ru/21526/' },
+    { year: '2021', name: 'Соединяя Мосты, Сочи', url: 'https://arch-sochi.ru/2021/04/soedinyaya-mosty-na-rivere-otkrytyj-arhitekturnyj-konkurs/' },
+    { year: '2021', name: 'Denkmal Award', url: 'https://denkmal.moscow/denkmal-awards' },
+    { year: '2020', name: 'Ресурс Периферии', url: 'http://projectbaltia.com/competitions-ru/21526/' },
+    { year: '2019', name: '«Офис.СПб»', url: 'http://projectbaltia.com/announcement-ru/17482/' },
+    { year: '2019', name: 'Новое пространство Росатома', url: 'https://projectnext.ru/competitions/competition-38603-novoe-prostranstvo-rosatoma/' },
+    { year: '2018', name: 'ADD AWARDS', url: 'https://addawards.ru/nominations/detail.php?ELEMENT_ID=71417' },
+    { year: '2018', name: 'Tile Story', url: 'https://www.officenext.ru/orientir/article_36646_konkurs-show-tile/' },
+    { year: '2017', name: '«Офис.СПб»', url: 'http://projectbaltia.com/down_news-ru/15632/' },
+    { year: '2016', name: 'Архитектурный образ России', url: 'https://archobraz.ru/' },
+    { year: '2013', name: 'Flex Office', url: 'https://www.architime.ru/competition/compexibition220513.htm' },
+    { year: '2012', name: 'Зеленый проект', url: 'https://www.architime.ru/competition/fest291112greenproject.htm' },
+    { year: '2026', name: 'Hotel Business Days by Ruviera', url: 'https://hbd.su/saint-petersburg' },
+    { year: '2025', name: 'Клуб строителей, форум', url: 'https://klub-stroitelei.ru/balka_spb_11/4' },
+    { year: '2025', name: 'Hotel Business Days by Ruviera', url: 'https://hbd.su/saint-petersburg/speakers' },
+    { year: '2025', name: '«Коммерсантъ», HoReCa', url: 'https://events.kommersant.ru/spb/events/horeca-2025-trendy-i-vyzovy/' },
+    { year: '2025', name: '«Архитектура и гостеприимство»', url: 'https://archandhotels.pro/tpost/vtis13sou1-17062025' },
+    { year: '2025', name: 'Бизнес и Дизайн Диалог Спб Best office', url: 'https://www.officenext.ru/practices/article_116238_biznes-sreda-peterburga-novye-trendy-i-modeli/' },
+    { year: '2025', name: 'Состав жюри «Золотой Трезини»', url: 'https://www.goldtrezzini.ru/about/' },
+    { year: '2022', name: 'Best office', url: 'https://www.dp.ru/a/2022/10/14/Radical_design_prezentova' },
+    { year: '2020', name: 'Вебинары «Архитектурная керамика. Экстерьер & интерьер»', url: 'http://projectbaltia.com/announcement-ru/19985/' },
+    { year: '2018', name: 'Обучающий «Офис.СПб»', url: 'http://projectbaltia.com/announcement-ru/15513/' }
   ];
 
   var ARROW = '<svg class="award__arrow icon" width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M7 19L19 7M19 7H9M19 7V17" stroke="currentColor" stroke-width="1.5"/></svg>';
 
   awards.forEach(function (a, i) {
     var row = document.createElement('a');
-    row.href = '#';
+    row.href = a.url || '#';
+    if (a.url) {
+      row.target = '_blank';
+      row.rel = 'noopener noreferrer';
+    }
     row.className = 'award' + (i >= COLLAPSED_COUNT ? ' award--hidden' : '');
     row.innerHTML =
       '<span class="award__year">' + a.year + '</span>' +
@@ -346,4 +350,32 @@
       btn.closest('.vacancy').classList.toggle('vacancy--open');
     });
   });
+})();
+
+// Draw-on squiggle arrow (CTA), plays once on scroll into view
+(function () {
+  var squiggle = document.querySelector('[data-draw-on-view]');
+  if (!squiggle) return;
+
+  var played = false;
+  var start = function () {
+    if (played) return;
+    played = true;
+    squiggle.classList.add('is-drawn');
+  };
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting) {
+          start();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.45 }
+    );
+    observer.observe(squiggle);
+  } else {
+    start();
+  }
 })();
