@@ -1817,6 +1817,99 @@ img {
   color: var(--color-accent);
 }
 
+/* Media */
+
+.media {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 40px;
+}
+
+.media__hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 370px;
+  background: var(--color-muted-bg);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+.media__block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.media__title {
+  margin: 0;
+  text-align: center;
+}
+
+.media__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 40px;
+}
+
+.media-card {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.media-card__img {
+  display: block;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 24px;
+  background: var(--color-muted-bg);
+  transition: opacity 0.2s ease;
+}
+
+.media-card:hover .media-card__img {
+  opacity: 0.85;
+}
+
+.media-card__title {
+  margin: 0 0 16px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.media-card:hover .media-card__title {
+  color: var(--color-accent);
+}
+
+.media-card__text {
+  margin: 0 0 20px;
+  flex: 1;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: justify;
+  opacity: 0.6;
+}
+
+.media-card__date {
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0.6;
+}
+
 /* Responsive */
 
 @media (max-width: 900px) {
@@ -1870,6 +1963,16 @@ img {
 
   .contacts__main {
     gap: 60px;
+  }
+
+  /* Media */
+  .media__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .media__hero {
+    height: 280px;
   }
 
   /* CTA stacks */
@@ -2030,6 +2133,16 @@ img {
 
   .contacts__email {
     font-size: 20px;
+  }
+
+  /* Media */
+  .media__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .media__hero {
+    height: 220px;
   }
 
   .faq {
