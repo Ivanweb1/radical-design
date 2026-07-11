@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Radical Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=202607111027">
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="container header__row">
+    <a href="portfolio.html" class="header__link">
+      <span class="dot" aria-hidden="true"></span>
+      Проекты
+    </a>
+
+    <nav class="header__nav">
+      <a href="bureau.html" class="header__nav-item">Бюро</a>
+      <a href="#" class="header__nav-item">Услуги</a>
+      <a href="media.html" class="header__nav-item">Медиа</a>
+      <a href="#" class="header__nav-item">Вакансии</a>
+      <a href="faq.html" class="header__nav-item header__nav-item--active">
+        <span class="dot" aria-hidden="true"></span>
+        FAQ
+      </a>
+      <a href="contacts.html" class="header__nav-item">Контакты</a>
+    </nav>
+
+    <a href="bureau.html#contact" class="header__link header__link--contact">Связаться</a>
+
+    <button class="header__burger" data-burger aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" data-mobile-menu aria-hidden="true">
+  <a href="bureau.html" class="mobile-menu__item">Бюро</a>
+  <a href="#" class="mobile-menu__item">Услуги</a>
+  <a href="media.html" class="mobile-menu__item">Медиа</a>
+  <a href="#" class="mobile-menu__item">Вакансии</a>
+  <a href="faq.html" class="mobile-menu__item mobile-menu__item--accent">FAQ</a>
+  <a href="contacts.html" class="mobile-menu__item">Контакты</a>
+  <a href="bureau.html#contact" class="mobile-menu__item mobile-menu__item--accent">Связаться</a>
+</nav>
+
+<main>
+
+  <section class="faq container">
+    <h1 class="faq__title">FAQ&nbsp;?</h1>
+
+    <div class="faq__list" data-faq>
+      <div class="faq__item faq__item--open">
+        <button class="faq__q" type="button" aria-expanded="true">
+          <span class="faq__q-text">Сколько стоит дизайн-проект?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Стоимость рассчитывается индивидуально и зависит от площади объекта, его назначения, состава помещений, а также исходных данных по проекту. Чтобы назвать точную цену, нам важно понять задачу, формат объекта и уровень проработки, который вам нужен.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Как долго делается дизайн-проект?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Сроки тоже зависят от масштаба и сложности объекта. Для офиса площадью около 100 м² проект обычно занимает от 2,5 до 4 месяцев, не считая времени на согласование этапов. Если объект крупнее или требует более сложной проработки, сроки обсуждаются отдельно.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Сколько стоит авторский надзор?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Стоимость авторского надзора рассчитывается индивидуально и зависит от площади объекта, его расположения и объема выездов. Оплата производится ежемесячно. Если на стройке возникает пауза, надзор можно приостановить и возобновить позже.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Делаете ли вы проект под ключ?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да, мы ведём проект полностью — от первой консультации до реализации и сдачи объекта. Берём на себя разработку концепции, рабочей документации, комплектацию, координацию подрядчиков и авторский надзор. У нас есть собственный строительный отдел, который глубоко понимает проект и позволяет реализовать его без потерь на этапе стройки. Мы контролируем сроки, бюджет и качество на каждом этапе, чтобы итоговое пространство точно соответствовало согласованной идее и было готово к использованию без дополнительных доработок.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Помогаете ли вы с комплектацией?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да, мы сопровождаем проект на этапе комплектации: подбираем позиции, сверяем спецификации, помогаем удерживать проектную логику и контролировать соответствие выбранных решений концепции.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Что входит в дизайн-проект?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Состав проекта зависит от задачи и формата объекта. Обычно он включает планировочные решения, концепцию, визуализации, рабочие чертежи и ведомости отделки, мебели, света и оборудования. При необходимости состав можно расширить под конкретный объект и стадию реализации.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Работаете ли вы с региональными объектами?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да, если формат проекта это позволяет, мы можем вести работу и удаленно, а также подключаться к объектам в других городах по согласованному регламенту.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Можно ли сделать проект в рамках уже заданного бюджета?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да, это один из рабочих сценариев. Мы учитываем бюджет на этапе проектирования и подбираем решения, которые можно реализовать без потери качества и логики пространства.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Могу ли я вносить правки в проект?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да. Мы закладываем возможность внесения правок на каждом этапе: планировка, визуализация, чертежи и ведомости. На каждом этапе предусмотрено до трех итераций правок. Дополнительные правки оплачиваются отдельно — в размере 10% от стоимости соответствующего этапа. Под одной правкой мы понимаем пакет комментариев, который передается единовременно.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Можно ли начать работу над дизайн-проектом до сдачи объекта в эксплуатацию?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да, можно. Для этого нужен единоразовый доступ на объект для выполнения замеров. В такой ситуации мы рекомендуем максимально точные лазерные замеры, чтобы собрать полный объем исходных данных и избежать ошибок на следующих этапах.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Может ли авторский надзор происходить без моего участия?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Да, может. Мы выстраиваем процесс так, чтобы участие заказчика было комфортным и не отнимало лишнего времени. Кто-то предпочитает погружаться в выбор материалов, мебели и света, а кто-то — утвердить ключевые решения и подключаться только на важных этапах. Мы заранее обсуждаем формат взаимодействия и подстраиваем надзор под ваш режим участия.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Какой бюджет реализации проекта?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Точный бюджет можно определить только после понимания исходных данных, состава работ и уровня отделки. На итоговую стоимость влияет и сам объект, и рыночная ситуация на момент реализации. Если у вас уже есть ориентир по бюджету, мы сразу можем работать в его рамках и на старте сориентируем по актуальным расценкам.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Как вы учитываете операционные процессы в проекте?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Мы проектируем не только внешний вид, но и сценарии использования пространства. Для отелей, офисов и общественных интерьеров это особенно важно: логистика, маршруты движения, эксплуатация, хранение, работа персонала и сценарии обслуживания влияют на результат не меньше, чем эстетика.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          <span class="faq__q-text">Что делать, если на объекте уже есть ограничения по планировке или инженерии?</span>
+          <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <div class="faq__a">
+          <div class="faq__a-inner">
+            <p>Это обычная ситуация. Мы начинаем с анализа исходных данных и ищем решения в рамках реальных ограничений, а не вопреки им. Такой подход помогает сразу проектировать жизнеспособный интерьер, а не только красивую картинку.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<button class="scroll-top" data-scroll-top aria-label="Наверх" type="button">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20V4M12 4L5 11M12 4L19 11" stroke="currentColor" stroke-width="1.5"/></svg>
+</button>
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <nav class="footer__nav">
+      <a href="portfolio.html" class="footer__nav-item">Проекты</a>
+      <a href="bureau.html" class="footer__nav-item">Бюро</a>
+      <a href="#" class="footer__nav-item">Услуги</a>
+      <a href="media.html" class="footer__nav-item">Медиа</a>
+      <a href="#" class="footer__nav-item">Вакансии</a>
+      <a href="faq.html" class="footer__nav-item">FAQ</a>
+      <a href="contacts.html" class="footer__nav-item">Контакты</a>
+    </nav>
+
+    <div class="footer__contacts">
+      <div class="footer__coords">
+        <a href="tel:+79219402144" class="footer__coord">+7 (921) 940 21 44</a>
+        <a href="mailto:info@radicaldesign.ru" class="footer__coord">info@radicaldesign.ru</a>
+      </div>
+
+      <div class="footer__socials">
+        <a href="#" class="footer__social">Telegram <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M20 12L13 5M20 12L13 19" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <a href="#" class="footer__social">ВКонтакте <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M20 12L13 5M20 12L13 19" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <a href="#" class="footer__social">Instagram <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M20 12L13 5M20 12L13 19" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <a href="#" class="footer__social">Behance <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M20 12L13 5M20 12L13 19" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+
+      <div class="footer__address">
+        <span class="footer__address-label">Адрес</span>
+        <p class="footer__address-text">Санкт-Петербург, Красногвардейская площадь 3Е, Design District Daa, 3 этаж, front office E3–291</p>
+      </div>
+    </div>
+
+    <div class="footer__cta">
+      <div class="footer__form-block">
+        <span class="footer__form-title">Обсудить проект</span>
+        <form class="form form--compact" novalidate>
+          <div class="form__fields">
+            <div class="form__row">
+              <div class="form__field"><input class="form__input" type="text" name="name" placeholder="Ваше имя"></div>
+              <div class="form__field"><input class="form__input" type="tel" name="phone" placeholder="Номер телефона"></div>
+            </div>
+            <div class="form__field"><input class="form__input" type="email" name="email" placeholder="E-mail"></div>
+            <div class="form__field"><input class="form__input" type="text" name="message" placeholder="Расскажите о проекте"></div>
+            <label class="form__consent">
+              <input class="form__checkbox" type="checkbox" name="consent">
+              <span class="form__checkbox-box" aria-hidden="true"></span>
+              <span class="form__consent-text">Я даю согласие на обработку персональных данных в соответствии с политикой конфиденциальности</span>
+            </label>
+          </div>
+          <button class="form__submit" type="submit">
+            Отправить
+            <svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9H16M16 9L10 3M16 9L10 15" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="footer__legal">
+        <span>2026 Все права защищены</span>
+        <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=202607111027"></script>
+</body>
+</html>
