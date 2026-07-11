@@ -301,12 +301,6 @@ img {
   opacity: 1;
 }
 
-.header__nav-item--active .dot,
-.header__nav-item:hover .dot {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
 /* Burger */
 
 .header__burger {
