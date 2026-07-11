@@ -2586,14 +2586,27 @@ img {
   object-fit: cover;
 }
 
-.article__lead {
+/* Rail: left column (260px) reserved for date/number, right column holds the aligned content */
+
+.article__rail-row {
   display: flex;
+  gap: 24px;
   align-items: flex-start;
-  gap: 60px;
+}
+
+.article__rail-spacer {
+  flex: 0 0 260px;
+}
+
+.article__rail-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .article__statement {
-  flex: 1 1 55%;
   margin: 0;
   font-family: var(--font-mono);
   font-weight: 500;
@@ -2602,7 +2615,6 @@ img {
 }
 
 .article__callout {
-  flex: 1 1 40%;
   padding: 32px;
   background: var(--color-muted-bg);
   font-size: 15px;
@@ -2618,27 +2630,18 @@ img {
   opacity: 0.6;
 }
 
-.article__p--narrow {
-  max-width: 620px;
-}
-
 .article__section {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.article__section-head {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-
 .article__section-num {
+  flex: 0 0 260px;
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 32px;
-  line-height: 1.2;
+  font-size: 48px;
+  line-height: 1;
 }
 
 .article__section-title {
@@ -2650,18 +2653,84 @@ img {
   color: var(--color-accent);
 }
 
-.article__boxes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* Photo/text row inside a section: composition (order/weight) set per row modifier */
+
+.article__row {
+  display: flex;
+  align-items: flex-start;
   gap: 24px;
 }
 
-.article__box {
-  padding: 24px;
-  background: var(--color-muted-bg);
+.article__col-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   font-size: 14px;
   line-height: 1.4;
   opacity: 0.6;
+  text-align: justify;
+}
+
+.article__col-text p {
+  margin: 0;
+}
+
+.article__col-text--full {
+  flex: 1;
+}
+
+.article__col-photo {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  background: var(--color-muted-bg);
+}
+
+.article__row--lead > :nth-child(1) {
+  flex: 3;
+}
+
+.article__row--lead > :nth-child(2) {
+  flex: 4;
+}
+
+.article__row--s1 > :nth-child(1) {
+  flex: 2;
+}
+
+.article__row--s1 > :nth-child(2) {
+  flex: 4;
+}
+
+.article__row--s1 > :nth-child(3) {
+  flex: 3;
+}
+
+.article__row--s2 > :nth-child(1) {
+  flex: 2;
+}
+
+.article__row--s2 > :nth-child(2) {
+  flex: 2;
+}
+
+.article__row--s2 > :nth-child(3) {
+  flex: 1;
+}
+
+.article__row--s3 > :nth-child(1) {
+  flex: 1;
+}
+
+.article__row--s3 > :nth-child(2) {
+  flex: 2;
+}
+
+.article__row--s3 > :nth-child(3) {
+  flex: 2;
+}
+
+.article__row--s3b > :nth-child(2) {
+  flex: 0 0 260px;
 }
 
 /* Responsive */
