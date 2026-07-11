@@ -172,11 +172,6 @@ img {
   opacity: 0.8;
 }
 
-.home-hero__projects:hover .dot {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
 .home-hero__bottom {
   margin-top: auto;
   padding-bottom: 40px;
@@ -249,11 +244,6 @@ img {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 16px;
-}
-
-.header__link:hover .dot {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
 }
 
 /* Shared active-state dot (header link, filters) */
