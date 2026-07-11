@@ -2488,7 +2488,6 @@ img {
   margin-bottom: 24px;
   background: var(--color-muted-bg);
   object-fit: cover;
-  filter: grayscale(1) sepia(1) hue-rotate(180deg) saturate(4) brightness(1.05);
   transition: opacity 0.2s ease;
 }
 
