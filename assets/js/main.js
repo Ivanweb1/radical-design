@@ -261,6 +261,20 @@
   });
 })();
 
+// FAQ accordion
+(function () {
+  var list = document.querySelector('[data-faq]');
+  if (!list) return;
+
+  list.querySelectorAll('.faq__q').forEach(function (q) {
+    q.addEventListener('click', function () {
+      var item = q.closest('.faq__item');
+      var open = item.classList.toggle('faq__item--open');
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+
 // Scroll to top
 (function () {
   var btn = document.querySelector('[data-scroll-top]');
