@@ -1725,6 +1725,98 @@ img {
   padding-bottom: 28px;
 }
 
+/* Contacts */
+
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.contacts__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.contacts__title {
+  margin: 0;
+}
+
+.contacts__coords {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contacts__phone {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--color-accent);
+  transition: opacity 0.2s ease;
+}
+
+.contacts__phone:hover {
+  opacity: 0.8;
+}
+
+.contacts__address {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.contacts__emails {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.contacts__label {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-text);
+  opacity: 0.5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.contacts__label:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.contacts__email {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.contacts__email:hover {
+  color: var(--color-accent);
+}
+
 /* Responsive */
 
 @media (max-width: 900px) {
@@ -1768,6 +1860,16 @@ img {
   .home-hero__projects,
   .home-hero__contact {
     display: none;
+  }
+
+  /* Contacts */
+  .contacts {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .contacts__main {
+    gap: 60px;
   }
 
   /* CTA stacks */
@@ -1907,6 +2009,27 @@ img {
   .section-title,
   .hero__title {
     font-size: 28px;
+  }
+
+  /* Contacts */
+  .contacts__br {
+    display: none;
+  }
+
+  .contacts__phone {
+    font-size: 20px;
+  }
+
+  .contacts__address {
+    font-size: 18px;
+  }
+
+  .contacts__label {
+    font-size: 16px;
+  }
+
+  .contacts__email {
+    font-size: 20px;
   }
 
   .faq {
