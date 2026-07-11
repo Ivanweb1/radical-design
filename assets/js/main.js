@@ -274,3 +274,62 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+// Falling badges animation (Услуги, Вакансии)
+(function () {
+  var groups = document.querySelectorAll('.service-badges, .vacancy-badges');
+  if (!groups.length) return;
+
+  groups.forEach(function (badges) {
+    var played = false;
+
+    var start = function () {
+      if (played) return;
+      played = true;
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          badges.classList.add('is-animated');
+        });
+      });
+    };
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting) {
+            start();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.45 }
+      );
+      observer.observe(badges);
+    } else {
+      start();
+    }
+  });
+})();
+
+// Services accordion
+(function () {
+  var toggles = document.querySelectorAll('[data-step-toggle]');
+  if (!toggles.length) return;
+
+  toggles.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btn.closest('.service-step').classList.toggle('service-step--open');
+    });
+  });
+})();
+
+// Vacancies accordion
+(function () {
+  var toggles = document.querySelectorAll('[data-vacancy-toggle]');
+  if (!toggles.length) return;
+
+  toggles.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btn.closest('.vacancy').classList.toggle('vacancy--open');
+    });
+  });
+})();
