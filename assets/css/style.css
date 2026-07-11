@@ -1909,6 +1909,11 @@ img {
     font-size: 28px;
   }
 
+  .faq {
+    padding-top: 24px;
+    gap: 28px;
+  }
+
   .faq__title {
     font-size: 32px;
   }
