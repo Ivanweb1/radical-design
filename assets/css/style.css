@@ -2527,42 +2527,48 @@ img {
   opacity: 0.6;
 }
 
-/* Article */
+/* Article — rebuilt 1:1 from Figma node 1:4 (exact px values from the design file) */
 
 .article {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
   padding-top: 40px;
 }
 
 .article__title {
-  margin: 0;
+  margin: 0 0 32px;
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 56px;
-  line-height: 1.15;
+  font-size: 72px;
+  line-height: 1.19;
   color: var(--color-accent);
+}
+
+.article__title-line {
+  display: block;
+}
+
+.article__title-line--2 {
+  margin-left: 253px;
 }
 
 .article__meta {
   display: flex;
-  gap: 24px;
-  height: 380px;
+  gap: 20px;
+  height: 448px;
+  margin-bottom: 32px;
 }
 
 .article__meta-side {
-  flex: 0 0 260px;
+  flex: 0 0 233px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
 }
 
 .article__date {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
-  opacity: 0.6;
+  font-size: 16px;
+  opacity: 0.7;
 }
 
 .article__photo-small,
@@ -2572,7 +2578,7 @@ img {
 }
 
 .article__photo-small {
-  flex: 1;
+  height: 281px;
 }
 
 .article__photo-large {
@@ -2586,123 +2592,160 @@ img {
   object-fit: cover;
 }
 
-/* Rail: left column (260px) reserved for date/number, right column holds the aligned content */
+/* Lead: statement + callout/photo row, both indented to the 253px rail */
 
-.article__rail-row {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.article__rail-spacer {
-  flex: 0 0 260px;
-}
-
-.article__rail-content {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.article__lead {
+  margin: 0 0 24px 253px;
 }
 
 .article__statement {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1.3;
-}
-
-.article__callout {
-  padding: 32px;
-  background: var(--color-muted-bg);
-  font-size: 15px;
-  line-height: 1.4;
-  opacity: 0.7;
-}
-
-.article__p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.4;
-  text-align: justify;
-  opacity: 0.6;
-}
-
-.article__section {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.article__section-num {
-  flex: 0 0 260px;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 1;
-}
-
-.article__section-title {
-  margin: 0;
+  margin: 0 0 24px;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 32px;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.article__lead-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 37px;
+}
+
+.article__lead-row .article__side-text {
+  flex: 0 0 356px;
+}
+
+.article__lead-row .article__ph {
+  flex: 1;
+  height: 232px;
+}
+
+/* Full-width mono paragraphs used between/inside sections */
+
+.article__wide {
+  margin: 0 0 80px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.article__section .article__wide {
+  margin-bottom: 32px;
+}
+
+.article__section .article__wide:last-child {
+  margin-bottom: 0;
+}
+
+/* Small Inter Tight side text used in photo/text rows */
+
+.article__side-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.article__ph {
+  background: var(--color-muted-bg);
+}
+
+.article__section {
+  margin-bottom: 80px;
+}
+
+.article__section-head {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.article__section-num {
+  flex: 0 0 253px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.article__section-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 54px;
   line-height: 1.2;
   color: var(--color-accent);
 }
 
-/* Photo/text row inside a section: composition (order/weight) set per row modifier */
+.article__section-intro {
+  margin: 0 0 32px 253px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
 
-.article__row {
+/* Rows with absolutely-positioned children, matching exact Figma coordinates */
+
+.article__abs-row {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.article__abs-row .article__ph,
+.article__abs-row .article__side-text {
+  position: absolute;
+}
+
+.article__abs-row--s1 {
+  height: 320px;
+}
+
+.article__abs-row--s2 {
+  height: 376px;
+}
+
+.article__abs-row--s3a {
+  height: 270px;
+}
+
+.article__row--s3b {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 22px;
+  margin-bottom: 32px;
 }
 
-.article__col-text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-size: 14px;
-  line-height: 1.4;
-  opacity: 0.6;
-  text-align: justify;
+.article__row--s3b .article__wide {
+  flex: 0 0 738px;
+  margin-bottom: 0;
 }
 
-.article__col-text p {
-  margin: 0;
+.article__row--s3b .article__ph {
+  flex: 0 0 360px;
+  height: 303px;
 }
 
-.article__col-text--full {
-  flex: 1;
-}
-
-.article__col-photo {
-  flex: 1;
-  aspect-ratio: 1 / 1;
-  background: var(--color-muted-bg);
-}
-
-.article__row--lead > :nth-child(1) {
-  flex: 3;
-}
-
-.article__row--lead > :nth-child(2) {
-  flex: 4;
-}
-
-.article__row--s1 > :nth-child(1) {
-  flex: 2;
-}
-
-.article__row--s1 > :nth-child(2) {
-  flex: 4;
-}
-
-.article__row--s1 > :nth-child(3) {
-  flex: 3;
+.article__more-title {
+  margin: 0 0 40px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.2;
+  text-transform: none;
+  text-align: left;
 }
 
 .article__row--s2 > :nth-child(1) {
