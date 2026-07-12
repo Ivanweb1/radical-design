@@ -2534,7 +2534,7 @@ img {
 }
 
 .article__title {
-  margin: 0 0 32px;
+  margin: 60px 0 32px;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 72px;
