@@ -232,11 +232,7 @@ img {
 }
 
 .home-hero .header__burger span {
-  background: #fff;
-}
-
-.home-hero .header__burger.is-open span {
-  background: var(--color-text);
+  background: var(--color-accent);
 }
 
 /* Header */
@@ -333,7 +329,7 @@ img {
   width: 100%;
   height: 3px;
   border-radius: 2px;
-  background: var(--color-text);
+  background: var(--color-accent);
   transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
@@ -2928,7 +2924,11 @@ img {
   }
 
   .header__nav,
-  .header__link {
+  .header__link--contact {
+    display: none;
+  }
+
+  body.menu-open .header__link {
     display: none;
   }
 
