@@ -2828,6 +2828,7 @@ img {
 
   /* Services */
   .services {
+    padding-top: 9px;
     gap: 80px;
   }
 
@@ -2839,6 +2840,17 @@ img {
   .service-block__intro,
   .service-block__steps {
     flex: 1 1 auto;
+  }
+
+  .service-block__intro {
+    gap: 16px;
+  }
+
+  /* Description spans the full column instead of hanging off the step number */
+  .service-step__desc {
+    margin-left: 0;
+    max-width: none;
+    text-align: justify;
   }
 
   .service-badges {
