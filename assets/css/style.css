@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Tilda Sans VF";
+  src: url("../fonts/TildaSansVF.ttf") format("truetype-variations"),
+       url("../fonts/TildaSansVF.ttf") format("truetype");
+  font-weight: 250 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-text: #252525;
   --color-accent: #0d0dc0;
@@ -191,7 +200,7 @@ img {
 
 .home-hero__title {
   margin: 0;
-  font-family: "Aeonik Pro", "Inter Tight", -apple-system, sans-serif;
+  font-family: "Tilda Sans VF", "Inter Tight", -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(40px, 8vw, 80px);
   line-height: 1.2;
@@ -350,6 +359,7 @@ img {
   background: var(--color-bg);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 24px;
   transform: translateX(100%);
   visibility: hidden;
@@ -362,16 +372,27 @@ img {
 }
 
 .mobile-menu__item {
+  position: relative;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 28px;
   line-height: 1.2;
-  color: var(--color-text);
+  color: #666666;
   transition: color 0.2s ease;
 }
 
 .mobile-menu__item--accent {
   color: var(--color-accent);
+}
+
+.mobile-menu__item--active {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.mobile-menu__item--active .dot {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 .mobile-menu__item:hover {
