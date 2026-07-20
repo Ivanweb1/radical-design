@@ -197,6 +197,10 @@ img {
   line-height: 1.2;
 }
 
+.home-hero__title-break {
+  display: none;
+}
+
 .home-hero__tagline {
   margin: 0;
   font-family: var(--font-body);
@@ -2920,6 +2924,16 @@ img {
   .home-hero__projects,
   .home-hero__contact {
     display: none;
+  }
+
+  .home-hero__title {
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .home-hero__title-break {
+    display: block;
   }
 
   /* Contacts */
