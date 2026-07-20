@@ -1780,9 +1780,15 @@ img {
   transform: rotate(-90deg);
 }
 
-.service-step__row:hover,
 .service-step--open .service-step__row {
   color: var(--color-accent);
+}
+
+/* Pointer-only: a tap latches :hover, leaving closed steps accented */
+@media (hover: hover) {
+  .service-step__row:hover {
+    color: var(--color-accent);
+  }
 }
 
 .service-step__desc {
@@ -2023,9 +2029,14 @@ img {
   transition: color 0.2s ease;
 }
 
-.vacancy__row:hover,
 .vacancy--open .vacancy__row {
   color: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .vacancy__row:hover {
+    color: var(--color-accent);
+  }
 }
 
 .vacancy__title {
@@ -2322,8 +2333,10 @@ img {
   transition: color 0.2s ease;
 }
 
-.faq__q:hover {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .faq__q:hover {
+    color: var(--color-accent);
+  }
 }
 
 .faq__item--open > .faq__q {
