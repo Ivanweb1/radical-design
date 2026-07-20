@@ -2912,8 +2912,8 @@ img {
     gap: 32px;
   }
 
-  .hero__mark img {
-    width: 240px;
+  .hero__mark {
+    display: none;
   }
 
   .header {
