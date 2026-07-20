@@ -3113,9 +3113,12 @@ img {
     --container-padding: 20px;
   }
 
-  .section-title,
-  .hero__title {
+  .section-title {
     font-size: 28px;
+  }
+
+  .hero__title {
+    font-size: 32px;
   }
 
   .article__title {
@@ -3190,13 +3193,31 @@ img {
   }
 
   .projects__banner img {
+    height: 327px;
+  }
+
+  .principles__track {
+    gap: 16px;
+  }
+
+  .principle {
+    flex-basis: 100%;
     height: 260px;
   }
 
   .projects__pager {
-    flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+
+  .projects__pager-link {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .projects__pager-link--next {
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
 
   .team__lead {
@@ -3204,17 +3225,17 @@ img {
     text-align: left;
   }
 
-  .department__title {
-    font-size: 24px;
-  }
-
   .team__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 169px;
+    gap: 12px 10px;
+    overflow-x: auto;
   }
 
   .member__photo {
-    aspect-ratio: 4 / 5;
+    width: 169px;
+    aspect-ratio: 169 / 194;
   }
 
   .form__row {
