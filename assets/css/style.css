@@ -2477,12 +2477,6 @@ img {
   gap: 40px;
 }
 
-/* Divider only between consecutive card rows, not above the first one */
-.media__block + .media__block .media__grid {
-  border-top: 1px solid var(--color-border);
-  padding-top: 40px;
-}
-
 .media-card {
   position: relative;
   display: flex;
@@ -2490,14 +2484,15 @@ img {
   color: inherit;
 }
 
-.media-card:not(:first-child)::before {
+/* Vertical divider between columns — skip the first card of every row */
+.media-card:not(:nth-child(4n+1))::before {
   content: "";
   position: absolute;
   left: -20px;
   top: 0;
   bottom: 0;
   width: 1px;
-  background: var(--color-border);
+  background: var(--color-accent);
 }
 
 .media-card__img {
@@ -2520,10 +2515,6 @@ img {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  transition: color 0.2s ease;
-}
-
-.media-card:hover .media-card__title {
   color: var(--color-accent);
 }
 
