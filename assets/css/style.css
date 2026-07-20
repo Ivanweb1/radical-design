@@ -291,9 +291,14 @@ img {
   opacity: 1;
 }
 
-.header__nav-item--active .dot {
+.header__nav-item--active .dot,
+.header__link--active .dot {
   opacity: 1;
   transform: translateX(-50%) scale(1);
+}
+
+.header__link--active {
+  color: var(--color-accent);
 }
 
 /* Burger */
