@@ -251,6 +251,14 @@
   if (next) next.addEventListener('click', function () { index++; update(); });
   window.addEventListener('resize', update);
   update();
+
+  // Touch devices have no hover, so tapping a card flips it and taps it back
+  track.querySelectorAll('.principle').forEach(function (card) {
+    card.addEventListener('click', function () {
+      if (window.matchMedia('(hover: hover)').matches) return;
+      card.classList.toggle('is-flipped');
+    });
+  });
 })();
 
 // Portfolio filters

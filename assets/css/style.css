@@ -695,9 +695,16 @@ img {
   will-change: transform;
 }
 
-.principle:hover .principle__rotor,
-.principle:focus-within .principle__rotor {
+.principle.is-flipped .principle__rotor {
   transform: rotateY(180deg);
+}
+
+/* Hover/focus would latch the card open on touch, so it is pointer-only */
+@media (hover: hover) {
+  .principle:hover .principle__rotor,
+  .principle:focus-within .principle__rotor {
+    transform: rotateY(180deg);
+  }
 }
 
 .principle__face {
@@ -2939,7 +2946,24 @@ img {
 
   .hero__heading {
     order: 1;
-    padding-top: 110px;
+    padding-top: 8px;
+  }
+
+  /* Brand and slashes stay on one line above the description, as in the design.
+     Explicit gaps replace the wide monospace spaces so the line fits 348px. */
+  .hero__brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .hero__brand .slash {
+    font-size: 0.68em;
+  }
+
+  .hero__title {
+    text-align: justify;
   }
 
   .projects {
@@ -3204,11 +3228,12 @@ img {
   }
 
   /* CTA squiggle: smaller and clear of the phone number on narrow screens */
+  /* Sized and placed so the arrow tip lands next to the phone number */
   .cta__squiggle {
-    width: 96px;
-    height: 85px;
-    right: -6px;
-    bottom: 30px;
+    width: 135px;
+    height: 119px;
+    right: 8px;
+    bottom: -7px;
   }
 
   /* Contacts */
@@ -3322,9 +3347,22 @@ img {
     font-size: 16px;
   }
 
+  /* Absolute centering made long names overlap the year on narrow screens */
+  .award {
+    gap: 12px;
+  }
+
+  .award__name {
+    position: static;
+    left: auto;
+    transform: none;
+    flex: 1;
+    text-align: center;
+    white-space: normal;
+  }
+
   .team__lead {
     font-size: 25px;
-    text-align: left;
   }
 
   .team__vacancy {
