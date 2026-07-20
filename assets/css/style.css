@@ -355,7 +355,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 90;
-  padding: 96px var(--container-padding) 40px;
+  padding: 120px var(--container-padding) 40px;
   background: var(--color-bg);
   display: flex;
   flex-direction: column;
@@ -374,20 +374,16 @@ img {
 .mobile-menu__item {
   position: relative;
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 28px;
   line-height: 1.2;
   color: #666666;
   transition: color 0.2s ease;
 }
 
-.mobile-menu__item--accent {
-  color: var(--color-accent);
-}
-
 .mobile-menu__item--active {
   color: var(--color-accent);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .mobile-menu__item--active .dot {
@@ -2932,12 +2928,13 @@ img {
   }
 
   .header__nav,
-  .header__link--contact {
+  .header__link {
     display: none;
   }
 
   .header__burger {
     display: flex;
+    margin-left: auto;
   }
 
   /* Home hero */
