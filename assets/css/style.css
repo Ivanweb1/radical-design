@@ -2950,6 +2950,7 @@ img {
   .hero__text {
     order: 3;
     margin-top: 80px;
+    gap: 12px;
   }
 
   .clients {
@@ -2976,6 +2977,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 100;
+    padding: 24px 0;
     background: var(--color-bg);
   }
 
@@ -3166,11 +3168,11 @@ img {
 
 @media (max-width: 600px) {
   :root {
-    --container-padding: 20px;
+    --container-padding: 16px;
   }
 
   .section-title {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .hero__title {
@@ -3271,13 +3273,26 @@ img {
     gap: 12px;
   }
 
+  .projects__pager-link--prev {
+    max-width: 190px;
+  }
+
   .projects__pager-link--next {
     flex-direction: column-reverse;
     align-items: flex-end;
   }
 
+  /* Head sits bottom-aligned with the arrows; the title wraps onto two lines */
+  .principles__head {
+    align-items: flex-end;
+  }
+
+  .principles__head .section-title {
+    max-width: 166px;
+  }
+
   .team__lead {
-    font-size: 22px;
+    font-size: 25px;
     text-align: left;
   }
 
@@ -3294,9 +3309,9 @@ img {
     aspect-ratio: 169 / 194;
   }
 
+  /* Name and phone stay side by side on mobile, as in the design */
   .form__row {
-    flex-direction: column;
-    gap: 32px;
+    gap: 16px;
   }
 
   .cta__subtitle,
@@ -3305,7 +3320,7 @@ img {
   }
 
   .footer__nav-item {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   /* Project page */
