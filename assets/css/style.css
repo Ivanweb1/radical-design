@@ -3033,17 +3033,33 @@ img {
   }
 
   /* CTA stacks */
+  /* Figma puts the contact line after the form, so .cta__info is flattened
+     to let its children be reordered against .cta__form */
   .cta {
+    position: relative;
     flex-direction: column;
-    gap: 48px;
+    gap: 40px;
   }
 
-  .cta__info,
+  .cta__info {
+    display: contents;
+  }
+
+  .cta__intro {
+    order: 1;
+  }
+
   .cta__form {
+    order: 2;
     flex: 1 1 auto;
     width: 100%;
   }
 
+  .cta__phone {
+    order: 3;
+  }
+
+  /* Anchored to .cta now that .cta__info no longer generates a box */
   .cta__squiggle {
     left: auto;
     right: -10px;
@@ -3275,6 +3291,7 @@ img {
 
   .projects__pager-link--prev {
     max-width: 190px;
+    align-items: flex-start;
   }
 
   .projects__pager-link--next {
@@ -3291,9 +3308,35 @@ img {
     max-width: 166px;
   }
 
+  .principle__title {
+    font-size: 20px;
+  }
+
+  /* Shape is pinned by top offset, which was sized for the taller desktop card */
+  .principle__shape {
+    top: 116px;
+  }
+
+  .award__year,
+  .award__name {
+    font-size: 16px;
+  }
+
   .team__lead {
     font-size: 25px;
     text-align: left;
+  }
+
+  .team__vacancy {
+    align-self: stretch;
+  }
+
+  .member__name {
+    font-size: 16px;
+  }
+
+  .member__role {
+    font-size: 12px;
   }
 
   .team__grid {
