@@ -252,10 +252,43 @@
   window.addEventListener('resize', update);
   update();
 
+  // Touch swipe
+  var touchStartX = 0, touchCurrentX = 0, dragging = false, dragged = false, baseIndex = 0;
+
+  viewport.addEventListener('touchstart', function (e) {
+    if (e.touches.length !== 1) return;
+    dragging = true;
+    dragged = false;
+    touchStartX = touchCurrentX = e.touches[0].clientX;
+    baseIndex = index;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  viewport.addEventListener('touchmove', function (e) {
+    if (!dragging) return;
+    touchCurrentX = e.touches[0].clientX;
+    var delta = touchCurrentX - touchStartX;
+    if (Math.abs(delta) > 10) dragged = true;
+    track.style.transform = 'translateX(' + (-baseIndex * step() + delta) + 'px)';
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', function () {
+    if (!dragging) return;
+    dragging = false;
+    track.style.transition = '';
+    var delta = touchCurrentX - touchStartX;
+    var threshold = 40;
+    if (delta <= -threshold) index = baseIndex + 1;
+    else if (delta >= threshold) index = baseIndex - 1;
+    else index = baseIndex;
+    update();
+  });
+
   // Touch devices have no hover, so tapping a card flips it and taps it back
   track.querySelectorAll('.principle').forEach(function (card) {
     card.addEventListener('click', function () {
       if (window.matchMedia('(hover: hover)').matches) return;
+      if (dragged) { dragged = false; return; }
       card.classList.toggle('is-flipped');
     });
   });
