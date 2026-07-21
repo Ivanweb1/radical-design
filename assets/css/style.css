@@ -396,6 +396,10 @@ img {
   color: var(--color-accent);
 }
 
+.mobile-menu__item--accent {
+  margin-top: 18px;
+}
+
 /* Hero */
 
 .hero {
