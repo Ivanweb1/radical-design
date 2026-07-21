@@ -236,6 +236,10 @@ img {
   background: var(--color-bg);
 }
 
+.home-hero .header__burger.is-open span {
+  background: var(--color-accent);
+}
+
 /* Header */
 
 .header {
