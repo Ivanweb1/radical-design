@@ -3094,7 +3094,7 @@ img {
   /* Media */
   .media__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px 24px;
+    gap: 20px 24px;
   }
 
   /* Stacked columns break the nth(4n+1) row math for the desktop vertical
@@ -3316,7 +3316,7 @@ img {
   /* Media */
   .media__grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
 
   .media__hero {
