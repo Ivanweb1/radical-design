@@ -213,7 +213,7 @@ img {
 
 .home-hero__tagline {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-weight: 500;
   font-size: clamp(14px, 2vw, 20px);
   line-height: 1.2;
