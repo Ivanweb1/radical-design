@@ -3549,6 +3549,14 @@ img {
     gap: 20px;
   }
 
+  .portfolio__item-title {
+    font-size: 16px;
+  }
+
+  .portfolio__item-desc {
+    font-size: 14px;
+  }
+
   /* Article */
   .article__title {
     font-size: 36px;
