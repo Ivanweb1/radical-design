@@ -3803,6 +3803,10 @@ img {
     margin: 0 10px 0 0;
   }
 
+  .article__float-row {
+    margin-bottom: 24px;
+  }
+
   .article__row--s3b {
     flex-direction: column;
     gap: 24px;
