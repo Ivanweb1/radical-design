@@ -233,7 +233,7 @@ img {
 }
 
 .home-hero .header__burger span {
-  background: var(--color-accent);
+  background: var(--color-bg);
 }
 
 /* Header */
@@ -3318,6 +3318,10 @@ img {
 
   .hero__title {
     font-size: 32px;
+  }
+
+  .home-hero__content {
+    gap: 16px;
   }
 
   .article__title {
