@@ -13,6 +13,7 @@
   --color-bg: #ffffff;
   --color-muted-bg: #f6f6f6;
   --color-border: #d8d8d8;
+  --color-arrow-idle: #929396;
 
   --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-body: "Inter Tight", -apple-system, sans-serif;
@@ -1772,11 +1773,13 @@ img {
 
 .service-step__arrow {
   flex: 0 0 24px;
+  color: var(--color-arrow-idle);
   transform: rotate(90deg);
   transition: transform 0.3s ease, color 0.2s ease;
 }
 
 .service-step--open .service-step__arrow {
+  color: inherit;
   transform: rotate(-90deg);
 }
 
@@ -2048,11 +2051,13 @@ img {
 
 .vacancy__arrow {
   flex: 0 0 24px;
+  color: var(--color-arrow-idle);
   transform: rotate(90deg);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.2s ease;
 }
 
 .vacancy--open .vacancy__arrow {
+  color: inherit;
   transform: rotate(-90deg);
 }
 
@@ -2345,11 +2350,13 @@ img {
 
 .faq__icon {
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  color: var(--color-arrow-idle);
+  transition: transform 0.3s ease, color 0.2s ease;
 }
 
 .faq__item--open .faq__icon {
   transform: rotate(180deg);
+  color: inherit;
 }
 
 .faq__a {
@@ -3307,7 +3314,7 @@ img {
   }
 
   .faq__q {
-    font-size: 20px;
+    font-size: 18px;
     padding: 16px 0;
     gap: 16px;
     align-items: flex-start;
@@ -3320,6 +3327,15 @@ img {
 
   .faq__a-inner p:last-child {
     padding-bottom: 16px;
+  }
+
+  /* Match the 16px title-to-divider gap used by the FAQ/services accordions */
+  .vacancy {
+    padding-top: 16px;
+  }
+
+  .vacancy + .vacancy {
+    margin-top: 16px;
   }
 
   .projects__banner img {
