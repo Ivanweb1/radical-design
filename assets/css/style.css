@@ -835,6 +835,12 @@ img {
   stroke-dashoffset: 1;
 }
 
+.cta__squiggle-arrow {
+  stroke: #1515e0;
+  stroke-width: 5;
+  stroke-linejoin: round;
+}
+
 .cta__squiggle.is-drawn .cta__squiggle-reveal {
   animation: draw-squiggle-arrow 1.25s ease-out forwards;
 }
@@ -3347,6 +3353,14 @@ img {
     height: 119px;
     right: 8px;
     bottom: -7px;
+  }
+
+  .cta__intro {
+    gap: 16px;
+  }
+
+  .cta__form {
+    gap: 24px;
   }
 
   /* Contacts */
