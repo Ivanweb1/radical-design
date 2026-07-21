@@ -2777,12 +2777,47 @@ img {
   height: 320px;
 }
 
+.article__ph--s1a { left: 0; top: 0; width: 233px; height: 150px; }
+.article__side-text--s1a { left: 253px; top: 0; width: 484px; }
+.article__ph--s1b { left: 760px; top: 0; width: 358px; height: 320px; }
+.article__side-text--s1b { left: 0; top: 170px; width: 735px; }
+
 .article__abs-row--s2 {
   height: 376px;
 }
 
+.article__ph--s2 { left: 887px; top: 0; width: 233px; height: 376px; }
+.article__side-text--s2a { left: 0; top: 5px; width: 484px; }
+.article__side-text--s2b { left: 508px; top: 5px; width: 360px; }
+
+.article__wide--s2 {
+  position: absolute;
+  left: 0;
+  top: 247px;
+  width: 867px;
+  margin: 0;
+}
+
 .article__abs-row--s3a {
   height: 270px;
+}
+
+.article__side-text--s3a { left: 0; top: 0; width: 233px; }
+.article__side-text--s3b { left: 633px; top: 0; width: 487px; }
+
+/* Photo lives with the paragraph it wraps on mobile; on desktop it is pulled
+   back up into the row above (row height 270 + its 32px margin). */
+
+.article__float-row {
+  position: relative;
+}
+
+.article__ph--s3a {
+  position: absolute;
+  left: 253px;
+  top: -302px;
+  width: 360px;
+  height: 262px;
 }
 
 .article__row--s3b {
@@ -3579,42 +3614,218 @@ img {
     font-size: 14px;
   }
 
-  /* Article */
+  /* Article — mobile frame is a single 348px column; every desktop
+     absolute row collapses back into normal flow, with photos floated
+     where the Figma frame wraps text around them. */
+
+  .article {
+    padding-top: 32px;
+  }
+
   .article__title {
-    font-size: 36px;
+    margin: 32px 0 24px;
+    font-size: 40px;
+    text-align: justify;
+  }
+
+  .article__title-line {
+    display: inline;
+  }
+
+  .article__title-line--2 {
+    margin-left: 0;
   }
 
   .article__meta {
-    flex-direction: column;
     height: auto;
-    gap: 16px;
+    gap: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
   }
 
   .article__meta-side {
-    flex: none;
+    flex: 0 0 auto;
   }
 
+  /* Mobile frame keeps only the right-hand photo next to the date */
   .article__photo-small {
-    aspect-ratio: 1 / 1;
+    display: none;
   }
 
   .article__photo-large {
-    flex: none;
-    height: 280px;
+    flex: 0 0 205px;
+    height: 230px;
   }
 
   .article__lead {
+    margin: 0 0 24px;
+  }
+
+  .article__statement {
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .article__lead-row {
     flex-direction: column;
     gap: 24px;
   }
 
-  .article__statement {
-    font-size: 22px;
+  .article__lead-row .article__side-text,
+  .article__lead-row .article__ph {
+    flex: none;
   }
 
-  .article__section-num,
+  .article__lead-row .article__ph {
+    width: 100%;
+    height: 180px;
+  }
+
+  .article__wide {
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  .article__section .article__wide {
+    margin-bottom: 24px;
+  }
+
+  .article__side-text {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .article__section-head {
+    margin-bottom: 24px;
+  }
+
+  .article__section-num {
+    flex: 0 0 142px;
+    font-size: 32px;
+  }
+
   .article__section-title {
-    font-size: 24px;
+    font-size: 32px;
+  }
+
+  .article__section-intro {
+    margin: 0 0 24px;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+
+  /* Absolute rows become plain flow */
+  .article__abs-row,
+  .article__abs-row--s1,
+  .article__abs-row--s2,
+  .article__abs-row--s3a {
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  .article__abs-row .article__ph,
+  .article__abs-row .article__side-text,
+  .article__abs-row .article__wide {
+    position: static;
+    left: auto;
+    top: auto;
+  }
+
+  .article__abs-row .article__side-text {
+    width: auto;
+  }
+
+  /* 1. Фрилансеры */
+  .article__ph--s1a {
+    float: left;
+    width: 131px;
+    height: 216px;
+    margin-right: 10px;
+  }
+
+  .article__side-text--s1a {
+    margin-bottom: 10px;
+  }
+
+  .article__side-text--s1b {
+    clear: left;
+  }
+
+  .article__ph--s1b {
+    clear: left;
+    width: 100%;
+    height: 230px;
+    margin-top: 24px;
+  }
+
+  /* 2. Ремонтные компании */
+  .article__abs-row--s2 {
+    margin-bottom: 16px;
+  }
+
+  .article__ph--s2 {
+    float: right;
+    width: 131px;
+    height: 312px;
+    margin-left: 12px;
+  }
+
+  .article__side-text--s2a {
+    margin-bottom: 12px;
+  }
+
+  .article__side-text--s2b {
+    clear: right;
+    margin-bottom: 24px;
+  }
+
+  .article__wide--s2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* 3. Бюро */
+  .article__side-text--s3a {
+    margin-bottom: 12px;
+  }
+
+  .article__ph--s3a {
+    position: static;
+    float: left;
+    width: 133px;
+    height: 216px;
+    margin: 0 10px 0 0;
+  }
+
+  .article__row--s3b {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .article__row--s3b .article__wide,
+  .article__row--s3b .article__ph,
+  .article__row--s3b > :nth-child(2) {
+    flex: none;
+  }
+
+  .article__row--s3b .article__ph {
+    width: 100%;
+    height: 262px;
+  }
+
+  .article .media__block {
+    margin-top: 80px;
+  }
+
+  .article__more-title {
+    margin-bottom: 32px;
   }
 
   .article__boxes {
