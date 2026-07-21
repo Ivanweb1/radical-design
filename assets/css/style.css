@@ -3071,17 +3071,41 @@ img {
   /* Contacts */
   .contacts {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 32px;
+    padding-top: 9px;
   }
 
   .contacts__main {
-    gap: 60px;
+    gap: 32px;
+  }
+
+  .contacts__coords {
+    gap: 16px;
+  }
+
+  .contacts__item {
+    gap: 6px;
+  }
+
+  .contacts__emails {
+    gap: 24px;
   }
 
   /* Media */
   .media__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 24px;
+  }
+
+  /* Stacked columns break the nth(4n+1) row math for the desktop vertical
+     divider, so swap it for a horizontal rule above each card instead */
+  .media-card:not(:nth-child(4n+1))::before {
+    display: none;
+  }
+
+  .media-card:not(:first-child) {
+    border-top: 1px solid var(--color-accent);
+    padding-top: 20px;
   }
 
   .media__hero {
@@ -3336,6 +3360,10 @@ img {
 
   .vacancy + .vacancy {
     margin-top: 16px;
+  }
+
+  .vacancy__title {
+    font-size: 20px;
   }
 
   .projects__banner img {
