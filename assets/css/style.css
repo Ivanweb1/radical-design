@@ -574,12 +574,11 @@ img {
   display: flex;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid var(--color-border);
   color: var(--color-text);
   transition: color 0.2s ease;
 }
 
-.awards__list .award:first-child {
+.award + .award {
   border-top: 1px solid var(--color-border);
 }
 
@@ -2074,7 +2073,7 @@ img {
 .vacancy__title {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.2;
 }
 
@@ -2459,8 +2458,8 @@ img {
 .contacts__address {
   margin: 0;
   font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 24px;
   line-height: 1.5;
   color: var(--color-text);
 }
@@ -2480,8 +2479,8 @@ img {
 
 .contacts__label {
   font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 24px;
   line-height: 1.2;
   color: var(--color-text);
   opacity: 0.5;
@@ -2497,7 +2496,7 @@ img {
 
 .contacts__email {
   font-family: var(--font-mono);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
   line-height: 1.2;
   color: var(--color-text);
