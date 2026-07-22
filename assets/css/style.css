@@ -1463,6 +1463,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  margin-top: 60px;
 }
 
 .project__media-row {
@@ -1518,6 +1519,7 @@ img {
   width: 100%;
   aspect-ratio: 1120 / 631;
   overflow: hidden;
+  margin-top: 60px;
 }
 
 .project__video img {
@@ -1562,6 +1564,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-top: 60px;
 }
 
 .authors__title {
