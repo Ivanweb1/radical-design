@@ -2127,17 +2127,13 @@ img {
 }
 
 .vacancy__list-items li {
-  position: relative;
-  padding-left: 16px;
   font-size: 16px;
   line-height: 1.3;
   opacity: 0.6;
 }
 
 .vacancy__list-items li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
+  content: "— ";
 }
 
 .vacancy__contact {
