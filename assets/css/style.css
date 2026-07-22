@@ -2791,65 +2791,85 @@ img {
   text-align: justify;
 }
 
-/* Rows with absolutely-positioned children, matching exact Figma coordinates */
+/* Photo/text rows. Column widths come from Figma, but heights flow from the
+   content so longer copy pushes the layout down instead of overlapping it. */
 
-.article__abs-row {
-  position: relative;
+.article__row {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 32px;
 }
 
-.article__abs-row .article__ph,
-.article__abs-row .article__side-text {
-  position: absolute;
+/* Text column that stacks a two-up row above a full-width paragraph */
+.article__col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.article__abs-row--s1 {
-  height: 320px;
+.article__col-top {
+  display: flex;
+  align-items: flex-start;
 }
 
-.article__ph--s1a { left: 0; top: 0; width: 233px; height: 150px; }
-.article__side-text--s1a { left: 253px; top: 0; width: 484px; }
-.article__ph--s1b { left: 760px; top: 0; width: 358px; height: 320px; }
-.article__side-text--s1b { left: 0; top: 170px; width: 735px; }
-
-.article__abs-row--s2 {
-  height: 401px;
+.article__row--s1 {
+  gap: 25px;
 }
 
-.article__ph--s2 { left: 887px; top: 0; width: 233px; height: 376px; }
-.article__side-text--s2a { left: 0; top: 5px; width: 484px; }
-.article__side-text--s2b { left: 508px; top: 5px; width: 360px; }
+.article__row--s1 .article__col {
+  flex: 0 0 735px;
+  gap: 20px;
+}
+
+.article__row--s1 .article__col-top {
+  gap: 20px;
+}
+
+.article__ph--s1a { flex: 0 0 233px; height: 150px; }
+.article__side-text--s1a { flex: 1; min-width: 0; }
+.article__ph--s1b { flex: 0 0 358px; height: 320px; }
+
+.article__row--s2 {
+  gap: 20px;
+}
+
+.article__row--s2 .article__col {
+  flex: 0 0 867px;
+}
+
+.article__row--s2 .article__col-top {
+  gap: 24px;
+}
+
+/* Photo sits first in the DOM so it can float right on mobile */
+.article__ph--s2 {
+  order: 2;
+  flex: 0 0 233px;
+  height: 376px;
+}
+
+.article__side-text--s2a { flex: 0 0 484px; }
+.article__side-text--s2b { flex: 1; min-width: 0; }
 
 .article__wide--s2 {
-  position: absolute;
-  left: 0;
-  top: 233px;
-  width: 867px;
   margin: 0;
 }
 
-.article__abs-row--s3a {
-  height: 253px;
-}
+/* Grid lets the photo sit between the two text columns on desktop while
+   staying next to the paragraph it wraps on mobile (DOM order is the mobile
+   one; grid-column/row place it for desktop). */
 
-.article__side-text--s3a { left: 0; top: 0; width: 233px; }
-.article__side-text--s3b { left: 633px; top: 0; width: 487px; }
-
-/* Photo lives with the paragraph it wraps on mobile; on desktop it is pulled
-   back up into the row above (row height 270 + its 32px margin). */
-
-.article__float-row {
-  position: relative;
+.article__grid--s3 {
+  display: grid;
+  grid-template-columns: 233px 360px 487px;
+  gap: 32px 20px;
   margin-bottom: 32px;
 }
 
-.article__ph--s3a {
-  position: absolute;
-  left: 253px;
-  top: -285px;
-  width: 360px;
-  height: 262px;
-}
+.article__side-text--s3a { grid-column: 1; grid-row: 1; }
+.article__ph--s3a { grid-column: 2; grid-row: 1; height: 262px; }
+.article__side-text--s3b { grid-column: 3; grid-row: 1; }
+.article__side-text--s3c { grid-column: 1 / -1; grid-row: 2; }
 
 .article__row--s3b {
   display: flex;
@@ -2880,30 +2900,6 @@ img {
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
-}
-
-.article__row--s2 > :nth-child(1) {
-  flex: 2;
-}
-
-.article__row--s2 > :nth-child(2) {
-  flex: 2;
-}
-
-.article__row--s2 > :nth-child(3) {
-  flex: 1;
-}
-
-.article__row--s3 > :nth-child(1) {
-  flex: 1;
-}
-
-.article__row--s3 > :nth-child(2) {
-  flex: 2;
-}
-
-.article__row--s3 > :nth-child(3) {
-  flex: 2;
 }
 
 /* Responsive */
@@ -3776,25 +3772,21 @@ img {
     text-align: justify;
   }
 
-  /* Absolute rows become plain flow */
-  .article__abs-row,
-  .article__abs-row--s1,
-  .article__abs-row--s2,
-  .article__abs-row--s3a {
-    height: auto;
+  /* Desktop columns collapse into one; wrappers go transparent so the
+     floats below sit in the row's own block context */
+  .article__row {
+    display: block;
     margin-bottom: 24px;
   }
 
-  .article__abs-row .article__ph,
-  .article__abs-row .article__side-text,
-  .article__abs-row .article__wide {
-    position: static;
-    left: auto;
-    top: auto;
+  .article__col,
+  .article__col-top {
+    display: contents;
   }
 
-  .article__abs-row .article__side-text {
-    width: auto;
+  .article__grid--s3 {
+    display: block;
+    margin-bottom: 24px;
   }
 
   /* 1. Фрилансеры */
@@ -3821,7 +3813,7 @@ img {
   }
 
   /* 2. Ремонтные компании */
-  .article__abs-row--s2 {
+  .article__row--s2 {
     margin-bottom: 16px;
   }
 
@@ -3852,15 +3844,10 @@ img {
   }
 
   .article__ph--s3a {
-    position: static;
     float: left;
     width: 133px;
     height: 216px;
     margin: 0 10px 0 0;
-  }
-
-  .article__float-row {
-    margin-bottom: 24px;
   }
 
   .article__row--s3b {
