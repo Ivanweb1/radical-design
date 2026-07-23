@@ -121,9 +121,26 @@ img {
   flex-direction: column;
   min-height: 100vh;
   min-height: 100svh;
-  background: #818181; /* placeholder — replace with hero video/photo */
+  background: #818181;
   color: #fff;
   overflow: hidden;
+}
+
+.home-hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 
 .home-hero__header {
@@ -3122,7 +3139,8 @@ img {
   /* Home hero */
   .home-hero__nav,
   .home-hero__projects,
-  .home-hero__contact {
+  .home-hero__contact,
+  .home-hero__video {
     display: none;
   }
 

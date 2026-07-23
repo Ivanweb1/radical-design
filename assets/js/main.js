@@ -421,3 +421,14 @@
     start();
   }
 })();
+
+// Home hero video — desktop only, so mobile never downloads it
+(function () {
+  var video = document.querySelector('[data-hero-video]');
+  if (!video) return;
+  if (!window.matchMedia('(min-width: 901px)').matches) return;
+
+  video.src = video.getAttribute('data-hero-video');
+  video.load();
+  video.play().catch(function () {});
+})();
