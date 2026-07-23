@@ -264,7 +264,11 @@ img {
 /* Header */
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: 32px 0;
+  background: var(--color-bg);
 }
 
 .header__row {
@@ -3157,11 +3161,7 @@ img {
   }
 
   .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
     padding: 24px 0;
-    background: var(--color-bg);
   }
 
   .header__nav,
