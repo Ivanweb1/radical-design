@@ -294,9 +294,10 @@
   });
 })();
 
-// Team department sliders (below 601px the grid switches to native touch-scroll instead)
+// Team sliders — department blocks (bureau.html) and project authors (project.html);
+// below 601px the grid switches to native touch-scroll instead
 (function () {
-  document.querySelectorAll('.department').forEach(function (department) {
+  document.querySelectorAll('.department, .authors').forEach(function (department) {
     var track = department.querySelector('[data-team-track]');
     if (!track) return;
 
