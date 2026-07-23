@@ -422,6 +422,17 @@
   }
 })();
 
+// Home hero: clicking anywhere outside the existing links/buttons goes to Бюро
+(function () {
+  var hero = document.querySelector('.home-hero');
+  if (!hero) return;
+
+  hero.addEventListener('click', function (e) {
+    if (e.target.closest('a, button')) return;
+    window.location.href = 'bureau.html';
+  });
+})();
+
 // Home hero video — desktop only, so mobile never downloads it
 (function () {
   var video = document.querySelector('[data-hero-video]');
