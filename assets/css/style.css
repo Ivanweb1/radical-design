@@ -1606,6 +1606,12 @@ img {
   border-color: var(--color-accent);
 }
 
+/* Bounding-box-centered triangle reads as shifted left (its solid edge
+   is left, point is right) — nudge right so it looks centered */
+.project__video-play svg {
+  margin-left: 3px;
+}
+
 /* Authors */
 
 .authors {
@@ -3706,6 +3712,7 @@ img {
   .project__video-play svg {
     width: 14px;
     height: auto;
+    margin-left: 1.5px;
   }
 
   /* Portfolio */
