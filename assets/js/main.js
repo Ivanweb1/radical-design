@@ -88,6 +88,32 @@
   });
 })();
 
+// "Связаться" target: center the CTA block instead of pinning it to the top
+(function () {
+  var target = document.getElementById('contact');
+  if (!target) return;
+
+  function centerContact(behavior) {
+    target.scrollIntoView({ block: 'center', behavior: behavior });
+  }
+
+  // Arrived from another page with #contact already in the URL — the
+  // browser has already jumped to the top of the section by the time
+  // "load" fires, so re-center once everything (incl. images) has settled
+  if (window.location.hash === '#contact') {
+    window.addEventListener('load', function () { centerContact('auto'); });
+  }
+
+  // Same-page "Связаться" link (header/mobile menu on bureau.html itself)
+  document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      history.pushState(null, '', '#contact');
+      centerContact('smooth');
+    });
+  });
+})();
+
 // Clients marquee
 (function () {
   var marquee = document.querySelector('[data-marquee] .marquee__track');
