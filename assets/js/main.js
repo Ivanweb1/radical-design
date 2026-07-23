@@ -294,6 +294,84 @@
   });
 })();
 
+// Team department sliders (below 601px the grid switches to native touch-scroll instead)
+(function () {
+  document.querySelectorAll('.department').forEach(function (department) {
+    var track = department.querySelector('[data-team-track]');
+    if (!track) return;
+
+    var prev = department.querySelector('[data-team-prev]');
+    var next = department.querySelector('[data-team-next]');
+    var viewport = track.parentElement;
+    var index = 0;
+
+    function active() {
+      return window.matchMedia('(min-width: 601px)').matches;
+    }
+
+    function step() {
+      var card = track.querySelector('.member');
+      if (!card) return 0;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function maxIndex() {
+      var total = track.children.length;
+      var perView = Math.max(1, Math.round(viewport.clientWidth / step()));
+      return Math.max(0, total - perView);
+    }
+
+    function update() {
+      if (!active()) {
+        track.style.transform = '';
+        return;
+      }
+      var max = maxIndex();
+      if (index > max) index = max;
+      if (index < 0) index = 0;
+      track.style.transform = 'translateX(' + (-index * step()) + 'px)';
+      if (prev) prev.disabled = index <= 0;
+      if (next) next.disabled = index >= max;
+    }
+
+    if (prev) prev.addEventListener('click', function () { index--; update(); });
+    if (next) next.addEventListener('click', function () { index++; update(); });
+    window.addEventListener('resize', update);
+    update();
+
+    // Touch swipe
+    var touchStartX = 0, touchCurrentX = 0, dragging = false, baseIndex = 0;
+
+    viewport.addEventListener('touchstart', function (e) {
+      if (!active() || e.touches.length !== 1) return;
+      dragging = true;
+      touchStartX = touchCurrentX = e.touches[0].clientX;
+      baseIndex = index;
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      touchCurrentX = e.touches[0].clientX;
+      var delta = touchCurrentX - touchStartX;
+      track.style.transform = 'translateX(' + (-baseIndex * step() + delta) + 'px)';
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', function () {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      var delta = touchCurrentX - touchStartX;
+      var threshold = 40;
+      if (delta <= -threshold) index = baseIndex + 1;
+      else if (delta >= threshold) index = baseIndex - 1;
+      else index = baseIndex;
+      update();
+    });
+  });
+})();
+
 // Portfolio filters
 (function () {
   var filters = document.querySelectorAll('[data-filter]');
