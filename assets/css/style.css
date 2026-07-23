@@ -3364,10 +3364,7 @@ img {
     order: 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, auto);
-    grid-auto-flow: column;
     gap: 16px 20px;
-    justify-content: start;
   }
 
   /* Legal left-aligned on mobile */
