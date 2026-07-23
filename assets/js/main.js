@@ -538,13 +538,17 @@
   });
 })();
 
-// Home hero video — desktop only, so mobile never downloads it
+// Home hero video — separate desktop/mobile sources; each only loads
+// when its own breakpoint matches, so neither downloads on the other
 (function () {
-  var video = document.querySelector('[data-hero-video]');
-  if (!video) return;
-  if (!window.matchMedia('(min-width: 901px)').matches) return;
+  function loadIfActive(video, query) {
+    if (!video) return;
+    if (!window.matchMedia(query).matches) return;
+    video.src = video.getAttribute('data-hero-video');
+    video.load();
+    video.play().catch(function () {});
+  }
 
-  video.src = video.getAttribute('data-hero-video');
-  video.load();
-  video.play().catch(function () {});
+  loadIfActive(document.querySelector('.home-hero__video--desktop'), '(min-width: 901px)');
+  loadIfActive(document.querySelector('.home-hero__video--mobile'), '(max-width: 900px)');
 })();

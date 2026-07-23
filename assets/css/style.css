@@ -135,6 +135,10 @@ img {
   z-index: 0;
 }
 
+.home-hero__video--mobile {
+  display: none;
+}
+
 .home-hero::after {
   content: "";
   position: absolute;
@@ -3177,9 +3181,16 @@ img {
   /* Home hero */
   .home-hero__nav,
   .home-hero__projects,
-  .home-hero__contact,
-  .home-hero__video {
+  .home-hero__contact {
     display: none;
+  }
+
+  .home-hero__video--desktop {
+    display: none;
+  }
+
+  .home-hero__video--mobile {
+    display: block;
   }
 
   .home-hero__title {
