@@ -153,6 +153,9 @@ img {
   align-items: center;
   justify-content: space-between;
   padding-top: 24px;
+  /* Hold the row at its original height so shrinking the mark moves only
+     the mark, not the nav and "Проекты". */
+  min-height: 56px;
   z-index: 100;
 }
 
@@ -164,7 +167,7 @@ img {
 .home-hero__mark img {
   display: block;
   width: auto;
-  height: 32px;
+  height: 21px;
 }
 
 .home-hero__nav {
