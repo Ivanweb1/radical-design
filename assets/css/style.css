@@ -170,7 +170,11 @@ img {
 .home-hero__nav {
   position: absolute;
   left: 50%;
+  /* Span the header's content box (top = its padding-top) so align-items
+     centres the links on the same line as the mark and "Проекты", whatever
+     height the mark happens to be. */
   top: 24px;
+  bottom: 0;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
